@@ -2,9 +2,8 @@ import streamlit as st
 
 # 页面标题
 st.title("Markdown Editor")
-st.set_page_config(layout="wide")
 
-# 自定义CSS样式，强制列宽为50%
+# 自定义CSS样式，确保两列各占50%的宽度
 st.markdown(
     """
     <style>
@@ -15,12 +14,13 @@ st.markdown(
     }
     .stTextArea textarea {
         width: 100% !important;
-        height: 700px !important;  /* 手动调整高度 */
+        height: 700px !important;
     }
-    /* 确保列宽为50% */
+    /* 强制每个列的宽度为50% */
     [data-testid="column"] {
-        width: calc(50% - 1rem) !important;
-        flex: none !important;
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        padding: 10px; /* 可以根据需要增加一些间距 */
     }
     </style>
     """,
