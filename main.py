@@ -1,9 +1,12 @@
 import streamlit as st
 
+# 设置页面为宽屏布局，确保更大显示范围
+st.set_page_config(layout="wide")
+
 # 页面标题
 st.title("Markdown Editor")
 
-# 自定义CSS样式，确保两列各占50%的宽度
+# 自定义CSS样式，强制两列各占50%的宽度
 st.markdown(
     """
     <style>
@@ -16,19 +19,19 @@ st.markdown(
         width: 100% !important;
         height: 700px !important;
     }
-    /* 强制每个列的宽度为50% */
+    /* 确保每个列的宽度为50% */
     [data-testid="column"] {
         width: 50% !important;
         flex: 0 0 50% !important;
-        padding: 10px; /* 可以根据需要增加一些间距 */
+        padding: 10px;  /* 你可以调整间距 */
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-# 使用Streamlit的列布局功能创建左右分栏，设置各占50%的宽度
-col1, col2 = st.columns(2)
+# 创建两列，分别用于输入和渲染markdown文本
+col1, col2 = st.columns([1, 1])  # 强制两列均分
 
 # 左边列：输入框，用于输入markdown文本
 with col1:
