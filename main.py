@@ -2,6 +2,7 @@ import streamlit as st
 
 # 页面标题
 st.title("Markdown Editor")
+st.set_page_config(layout="wide")
 
 # 自定义CSS样式，强制列宽为50%
 st.markdown(
